@@ -16,6 +16,7 @@ const Nav = () => {
             <i class="fas fa-bars bar" />
           </Dropdown.Toggle>
           <Dropdown.Menu>
+<<<<<<< HEAD
             <Dropdown.Item onClick={() => addCapabilities(true)}>
               X-Capabilities
             </Dropdown.Item>
@@ -27,6 +28,12 @@ const Nav = () => {
             </Dropdown.Item>
             <Dropdown.Item onClick={() => addFaq(true)}>FAQ</Dropdown.Item>
             <Dropdown.Item onClick={() => addX(true)}>What is X</Dropdown.Item>
+=======
+            <Dropdown.Item href="#/action-1">Preferences</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">X-Capabilities</Dropdown.Item>
+            <Dropdown.Item href="">Bookmarks</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">FAQ</Dropdown.Item>
+>>>>>>> 5a2de647da7994e502b45f247081d8d1060e0904
           </Dropdown.Menu>
         </Dropdown>
         <img src="https://github.com/moralss/x-hub/blob/master/client-side/src/components/X.png?raw=true" />
