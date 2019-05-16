@@ -13,19 +13,12 @@ const BottomNav = () => {
     <React.Fragment>
       <BtmNav>
 
-<<<<<<< HEAD
-        <i class="far fa-comment" />
-        <i onClick={() => showUploadMod(true)} class="fas fa-upload" />
-        <i onClick={() => showNotifications(true)} class="fas fa-bell" />
-        {/* <i class="far fa-question-circle" /> */}
-=======
        <Link style={{paddingTop:"0.5rem"}} to="/chat">
           <i class="far fa-comment" />
         </Link>
         <i class="fas fa-upload" />
         <i class="fas fa-bell" />
         <i class="far fa-question-circle" />
->>>>>>> 5a2de647da7994e502b45f247081d8d1060e0904
       </BtmNav>
       ;
       <Modal

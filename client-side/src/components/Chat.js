@@ -14,24 +14,22 @@ import BottomNav from "./bottom-nav";
 import Nav from "./nav";
 import { connect } from "react-redux";
 
-
 const Chat = () => {
-  const [chats, addChats] = useState([{ input: "" }]);
+  const [chats, addChats] = useState([{ userName: "", input: "" }]);
+  const [userName, addUserName] = useState("");
   const [user, addUser] = useState("");
   const [input, addInput] = useState("");
 
-  function sendMessage(userName = false) {
-    socket.emit("chat message", { input});
+  function sendMessage() {
+    socket.emit("chat message", { userName, input });
   }
 
   const socket = openSocket("http://localhost:3001");
 
-  useEffect(() => {
-  });
+  useEffect(() => {});
 
-
-  socket.on("connect", function(socket) {
-    console.log("connect", socket);
+  socket.on("connection", function(socket) {
+    console.log("connection", socket);
   });
 
   socket.on("chat message", function(msg) {
@@ -42,12 +40,24 @@ const Chat = () => {
     <div>
       <ChatContainer>
         <UsersWrapper>users</UsersWrapper>
-
+        <input
+          type="text"
+          onChange={event => {
+            addUserName(event.target.value);
+          }}
+        />
         <ChatWrapper>
           <Bubble>
             {chats.map(chat => (
               <p>
-                <li>{chat.input}</li>
+                <li
+                  style={{
+                    backgroundColor:
+                      chat.userName === userName ? "blue" : "white"
+                  }}
+                >
+                  {chat.input}
+                </li>
               </p>
             ))}
           </Bubble>

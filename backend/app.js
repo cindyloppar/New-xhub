@@ -11,9 +11,8 @@ var cors = require("cors");
 var path = require("path");
 
 const { Pool, Client } = require("pg");
-const connectionString =
-  "postgresql://montshepetsa:mamaflora5@localhost:5432/x_hub";
-const connectionString = "postgres://postgres:mercy@localhost:5432/x_hub";
+
+const connectionString = "postgres://postgres:Gugulethu@localhost:5432/x_hub";
 
 app.use(cors());
 
@@ -74,7 +73,7 @@ app.get("/users", async (req, res) => {
 });
 
 app.get("/b", (req, res) => {
-  res.json({ message: "hello wolrd" });
+  res.json({ message: "hello world" });
 });
 
 app.get("/", express.static(path.join(__dirname, "./public")));
