@@ -23,7 +23,7 @@ width: -webkit-fill-available;
 width: -moz-available;
 height: -moz-available;
 background: #000000db;
-grid-template-columns: repeat(4,1fr););
+grid-template-columns: repeat(3,1fr););
 bottom:0;
 
 }`;

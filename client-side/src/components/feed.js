@@ -111,6 +111,7 @@ const Feeds = props => {
         show={showComments}
         onHide={() => viewComment(false)}
         dialogClassName="modal-90w"
+        className="commentsModal"
         aria-labelledby="example-custom-modal-styling-title"
       >
         <Modal.Header closeButton>
@@ -124,6 +125,13 @@ const Feeds = props => {
               onChange={e => addComment(e.target.value)}
               type="text"
             />
+<<<<<<< HEAD
+            <i
+              className="icon fas fa-chevron-right"
+              onClick={() => viewComment(true)}
+            />
+=======
+>>>>>>> 5a2de647da7994e502b45f247081d8d1060e0904
           </div>
           <div className="iconBackground">
             <i
