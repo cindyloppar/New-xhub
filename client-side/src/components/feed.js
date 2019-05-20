@@ -11,25 +11,33 @@ const Feeds = props => {
 
   const [showBookmarks, alertBookmarks] = useState(false);
   const [comment, addComment] = useState("");
+  const [color, changeColor] = useState("");
 
   useEffect(() => {
     Axios.get("localhost:3001/article/likes/")
-      .then(function (response) {
+      .then(function(response) {
         console.log(response);
       })
-      .catch(function (error) {
+      .catch(function(error) {
         console.log(error);
       });
   });
+
+  function changeToLike() {
+    changeColor("marked");
+
+    console.log(color);
+  }
+
   function pushToStorage(username, comment, article) {
     var date = new Date();
     // var dd = today.getDate();
     var store = [];
-    var value = store.push({ "user": username, "comment": comment, "date":date });
+    var value = store.push({ user: username, comment: comment, date: date });
 
-    localStorage.setItem("comment", JSON.stringify(value))
+    localStorage.setItem("comment", JSON.stringify(value));
 
-    return { article: article, comments: value }
+    return { article: article, comments: value };
   }
 
   return (
@@ -45,7 +53,6 @@ const Feeds = props => {
           </p>
         </Modal.Body>
       </Modal.Dialog>
-
       <Modal
         show={show}
         onHide={() => setShow(false)}
@@ -88,11 +95,17 @@ const Feeds = props => {
             <i class="icon far fa-comments" onClick={() => viewComment(true)} />
           </div>
           <div className="iconBackground">
-            <i class=" icon fas fa-sync-alt" onClick={()=> search(true)}/>
+            <i class=" icon fas fa-sync-alt" onClick={() => search(true)} />
             <i class="icon fas fa-share-alt" />
           </div>
           <div className="iconBackground">
-            <i class="icon far fa-thumbs-up" />
+            <i
+              style={{
+                color: color === "marked" ? "red" : "white"
+              }}
+              onClick={() => changeToLike()}
+              class="icon far fa-thumbs-up"
+            />
           </div>
           <div className="iconBackground">
             <i class=" icon fab fa-font-awesome-flag" />
@@ -106,8 +119,8 @@ const Feeds = props => {
         </Modal.Footer>
         <ViewComments postedComments={props.comments} />
       </Modal>
-
-     ` <Modal
+      `{" "}
+      <Modal
         show={showComments}
         onHide={() => viewComment(false)}
         dialogClassName="modal-90w"
@@ -129,7 +142,7 @@ const Feeds = props => {
           <div className="iconBackground">
             <i
               className="icon fas fa-chevron-right"
-              onClick={() => viewComment(true)}
+              onClick={() => viewComment(false)}
             />
           </div>
         </Modal.Body>
@@ -147,7 +160,6 @@ const Feeds = props => {
         {/* <Button variant="secondary">filter</Button>
           <Button variant="primary"> comment</Button> */}
       </Modal>
-
       <Modal
         show={showBookmarks}
         onHide={() => alertBookmarks(false)}
@@ -179,7 +191,7 @@ const Feeds = props => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <input placeholder="search " type="text"/>
+          <input placeholder="search " type="text" />
         </Modal.Body>
         <Modal.Footer>
           {/* <Button variant="secondary">filter</Button>

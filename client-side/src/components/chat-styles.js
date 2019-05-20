@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const ChatContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 3fr;
-  height: 90vh;
+  grid-template-columns: 1fr;
+  grid-template-row:1fr 1fr 9fr;
+  height: 43vh;
 `;
 
 export const UsersWrapper = styled.div`
@@ -21,6 +22,7 @@ export const Send = styled.button`
 `;
 
 export const Bubble = styled.div`
+overflow:hidden;
   display: grid;
   justify-content: center;
   align-content:start;
@@ -41,6 +43,7 @@ export const Bubble = styled.div`
 `;
 
 export const ChatWrapper = styled.div`
+overflow:hidden;
   display: grid;
   border: 1px solid black;
   grid-template-rows: 7fr 1fr;

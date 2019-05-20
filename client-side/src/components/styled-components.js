@@ -5,6 +5,7 @@ const DashContainer = styled.div`
   width: -moz-available;
   height: -moz-available;
   height: -webkit-fill-available;
+
 `;
 const Feed = styled.div`
   height: 33.6rem;
@@ -23,7 +24,7 @@ width: -webkit-fill-available;
 width: -moz-available;
 height: -moz-available;
 background: #000000db;
-grid-template-columns: repeat(3,1fr););
+grid-template-columns: repeat(4,1fr););
 bottom:0;
 
 }`;
@@ -43,7 +44,7 @@ const Navigation = styled.div`
   justify-content: start;
 `;
 const Icons = styled.i`
-  font-size: 3rem;
+  font-size: 1rem;
 `;
 const Input = styled.input`
   margin: auto;

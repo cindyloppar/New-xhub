@@ -13,6 +13,7 @@ import Feeds from "./feed";
 import Chat from "./Chat";
 import ShareContent from "./share-content";
 import ChatLog from "./ChatLog";
+import Upload from "./upload";
 
 class Main extends Component {
   constructor(props) {
@@ -28,6 +29,8 @@ class Main extends Component {
           <Route exact path="/" component={Dashboard} />
           <Route exact path="/home" component={Feeds} />
           <Route exact path="/chat" component={Chat} />
+          <Route exact path="/upload" component={Upload} />
+          
           {/* <Router exact path="/content" component={ShareContent} /> */}
           <Route exact path="/chatlog" component={ChatLog} />
           </Switch>
